@@ -7,7 +7,7 @@ app.use(express.static(__dirname + "/dosyalar"));
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-mongoose.connect("mongodb+srv://admin:1234@cluster0.iw4xo.mongodb.net/Cluster0?retryWrites=true&w=majority", {useNewUrlParser: true , useUnifiedTopology : true});
+mongoose.connect("mongodb+srv://HzyfLtl:1234@cluster0.nshr1.mongodb.net/Cluster0?retryWrites=true&w=majority", {useNewUrlParser: true , useUnifiedTopology : true});
 
 var yapilacakListesi = new Schema(
   {
@@ -85,10 +85,10 @@ app.post("/sil", function(req, res){
 
 
 let port = process.env.PORT;
-if(port == "" || port == null){
+if(port == "" || port == null){  //sunucunun kullandığı bir port varso o, yoksa 5000
   port = 5000;
 }
 
 app.listen(port, function(){
-  console.log("port numarasi : " + port);
+  console.log("port : " + port);
 });
